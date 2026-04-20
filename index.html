@@ -6,51 +6,112 @@
 <title>Hobbs Web Services</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
     color: #ffffff;
     text-align: center;
 }
 
+/* HERO */
 header {
-    padding: 60px 20px;
+    padding: 100px 20px 80px;
+    background: linear-gradient(135deg, #1e1b4b, #020617);
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #7c3aed;
+    filter: blur(140px);
+    top: -100px;
+    right: -100px;
+    opacity: 0.5;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 3em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: #cbd5f5;
+    max-width: 700px;
+    margin: 10px auto;
+    font-size: 1.1em;
+}
+
+/* SECTIONS */
+.section {
+    padding: 70px 20px;
+}
+
+/* CARDS */
+.card {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 480px;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border: 1px solid rgba(124, 58, 237, 0.6);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.25);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.card p {
+    color: #cbd5f5;
+}
+
+/* DEVELOPMENT SECTION */
+.section h2 {
+    font-size: 2em;
     margin-bottom: 10px;
 }
 
-p {
+.section p {
     color: #cbd5f5;
     max-width: 700px;
     margin: 10px auto;
 }
 
-.section {
-    padding: 50px 20px;
-}
-
-.card {
-    background: #1e293b;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 12px;
-    max-width: 450px;
-}
-
+/* BRAND */
 .brand {
     margin-top: 40px;
-    font-size: 0.9em;
+    font-size: 0.95em;
     color: #94a3b8;
 }
 
+.brand strong {
+    color: #a78bfa;
+}
+
+/* FOOTER */
 footer {
-    padding: 30px;
+    padding: 40px 20px;
     font-size: 0.9em;
     color: #64748b;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 </style>
 </head>
@@ -59,30 +120,30 @@ footer {
 
 <header>
     <h1>Hobbs Web Services</h1>
-    <p>Domains. Hosting. Web Infrastructure.</p>
-    <p>A developing platform focused on providing simple, reliable web solutions for individuals, churches, and businesses.</p>
+    <p><strong>Domains. Hosting. Web Infrastructure.</strong></p>
+    <p>Built for individuals, churches, and businesses who want power, clarity, and control over their online presence.</p>
 </header>
 
 <section class="section">
     <div class="card">
         <h2>Domain Services</h2>
-        <p>Future domain registration and management designed for clarity and control.</p>
+        <p>Future domain registration and management designed for simplicity, ownership, and full control.</p>
     </div>
 
     <div class="card">
         <h2>Hosting Solutions</h2>
-        <p>Secure and dependable hosting services built to support growing websites.</p>
+        <p>Secure, stable, and scalable hosting engineered to support growth without compromise.</p>
     </div>
 
     <div class="card">
         <h2>Platform Development</h2>
-        <p>A system being prepared to simplify website ownership and management.</p>
+        <p>A streamlined system in progress to simplify website creation, management, and long-term expansion.</p>
     </div>
 </section>
 
 <section class="section">
     <h2>Currently in Development</h2>
-    <p>Hobbs Web Services is being built and will be available in the future.</p>
+    <p>Hobbs Web Services is actively being built. A stronger, more powerful platform is on the way.</p>
 
     <div class="brand">
         <p>Website design and development by</p>
