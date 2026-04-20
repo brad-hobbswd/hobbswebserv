@@ -158,27 +158,13 @@ header p {
     color: #cbd5f5;
 }
 
-/* CONTACT */
-.contact-form {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form input,
-.contact-form textarea {
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    background: #0f172a;
-    color: white;
-}
-
-.contact-form textarea {
-    min-height: 120px;
+/* EMBED FORM */
+.form-embed {
+    max-width: 700px;
+    margin: 30px auto 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 /* FOOTER */
@@ -196,11 +182,6 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-    #access:hover {
-    transform: scale(1.01);
-    transition: 0.3s ease;
 }
 </style>
 </head>
@@ -272,8 +253,7 @@ footer {
 </section>
 
 <!-- EARLY ACCESS -->
-<section class="section" id="access" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeCglw_iTkJpIrqZbfTSvi1utgJl5iIPpO9AZ-0pln24AoNIQ/viewform', '_blank')" style="cursor:pointer;">
-
+<section class="section" id="access">
     <h2>Early Access by Request Only</h2>
 
     <p style="max-width:600px;margin:10px auto;color:#cbd5f5;">
@@ -284,10 +264,22 @@ footer {
         Requests are reviewed to ensure alignment with platform capabilities and long-term goals.
     </p>
 
-    <div style="margin-top:25px;">
-        <span class="btn primary">Request Access</span>
+    <div class="form-embed">
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeCglw_iTkJpIrqZbfTSvi1utgJl5iIPpO9AZ-0pln24AoNIQ/viewform?embedded=true" 
+            width="100%" 
+            height="700" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Loading…
+        </iframe>
     </div>
 
+    <div style="margin-top:30px; color:#94a3b8;">
+        Website design and development by 
+        <strong style="color:#a78bfa;">Brad Hobbs Web Design</strong>
+    </div>
 </section>
 
 <!-- FOOTER -->
