@@ -197,6 +197,11 @@ footer {
         transform: translateY(0);
     }
 }
+
+    #access:hover {
+    transform: scale(1.01);
+    transition: 0.3s ease;
+}
 </style>
 </head>
 
@@ -267,22 +272,22 @@ footer {
 </section>
 
 <!-- EARLY ACCESS -->
-<section class="section" id="access">
+<section class="section" id="access" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeCglw_iTkJpIrqZbfTSvi1utgJl5iIPpO9AZ-0pln24AoNIQ/viewform', '_blank')" style="cursor:pointer;">
+
     <h2>Early Access by Request Only</h2>
+
     <p style="max-width:600px;margin:10px auto;color:#cbd5f5;">
-        Hobbs Web Services remains in active development. Early access will open soon for a limited number of individuals, churches, and businesses seeking a stronger digital foundation.
+        Hobbs Web Services remains in active development. Access is currently limited while infrastructure is being refined and expanded.
     </p>
 
-    <form class="contact-form">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="What are you looking to build?"></textarea>
-        <button type="submit" class="btn primary">Request Access</button>
-    </form>
+    <p style="max-width:600px;margin:10px auto;color:#94a3b8;">
+        Requests are reviewed to ensure alignment with platform capabilities and long-term goals.
+    </p>
 
-    <div style="margin-top:30px; color:#94a3b8;">
-        Website design and development by <strong style="color:#a78bfa;">Brad Hobbs Web Design</strong>
+    <div style="margin-top:25px;">
+        <span class="btn primary">Request Access</span>
     </div>
+
 </section>
 
 <!-- FOOTER -->
