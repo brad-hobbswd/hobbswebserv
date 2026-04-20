@@ -158,13 +158,42 @@ header p {
     color: #cbd5f5;
 }
 
-/* EMBED FORM */
-.form-embed {
-    max-width: 700px;
+/* FORM (NEW) */
+.contact-form {
+    max-width: 500px;
     margin: 30px auto 0;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin: 10px 0;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(124,58,237,0.2);
+    outline: none;
+    background: #020617;
+    color: white;
+    font-size: 0.95em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid #7c3aed;
+    box-shadow: 0 0 10px rgba(124,58,237,0.3);
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+    display: none;
+    margin-top: 20px;
+    color: #a78bfa;
 }
 
 /* FOOTER */
@@ -252,7 +281,7 @@ footer {
     </div>
 </section>
 
-<!-- EARLY ACCESS -->
+<!-- EARLY ACCESS (UPDATED FORM) -->
 <section class="section" id="access">
     <h2>Early Access by Request Only</h2>
 
@@ -264,17 +293,17 @@ footer {
         Requests are reviewed to ensure alignment with platform capabilities and long-term goals.
     </p>
 
-    <div class="form-embed">
-        <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSeCglw_iTkJpIrqZbfTSvi1utgJl5iIPpO9AZ-0pln24AoNIQ/viewform?embedded=true" 
-            width="100%" 
-            height="700" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0">
-            Loading…
-        </iframe>
-    </div>
+    <form class="contact-form" id="customForm">
+        <input type="text" name="entry.672266463" placeholder="Name" required>
+        <input type="email" name="entry.1808032126" placeholder="Email" required>
+        <textarea name="entry.15182561" placeholder="What are you looking to build?"></textarea>
+
+        <button type="submit" class="btn primary">Request Access</button>
+    </form>
+
+    <p class="success-message" id="successMessage">
+        Request received. You will be contacted as access becomes available.
+    </p>
 
     <div style="margin-top:30px; color:#94a3b8;">
         Website design and development by 
@@ -286,6 +315,23 @@ footer {
 <footer>
     <p>© 2026 Hobbs Web Services. All rights reserved.</p>
 </footer>
+
+<script>
+document.getElementById("customForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch("https://docs.google.com/forms/d/e/1FAIpQLSeCglw_iTkJpIrqZbfTSvi1utgJl5iIPpO9AZ-0pln24AoNIQ/formResponse", {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+    });
+
+    document.getElementById("successMessage").style.display = "block";
+    this.reset();
+});
+</script>
 
 </body>
 </html>
