@@ -15,12 +15,42 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: radial-gradient(circle at top, #0f172a, #020617);
     color: #ffffff;
-    text-align: center;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(2, 6, 23, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #a78bfa;
+}
+
+.links a {
+    margin-left: 25px;
+    color: #cbd5f5;
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.links a:hover {
+    color: #a78bfa;
 }
 
 /* HERO */
 header {
     padding: 100px 20px 80px;
+    text-align: center;
     background: linear-gradient(135deg, #1e1b4b, #020617);
     position: relative;
     overflow: hidden;
@@ -51,21 +81,66 @@ header p {
     font-size: 1.1em;
 }
 
+/* BUTTONS */
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    margin: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.primary {
+    background: #7c3aed;
+    color: white;
+}
+
+.primary:hover {
+    background: #6d28d9;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+}
+
+.secondary {
+    border: 1px solid #7c3aed;
+    color: #a78bfa;
+}
+
+.secondary:hover {
+    background: rgba(124, 58, 237, 0.15);
+}
+
 /* SECTIONS */
 .section {
     padding: 70px 20px;
+    text-align: center;
+}
+
+/* GRID */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
 }
 
 /* CARDS */
 .card {
     background: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(10px);
-    margin: 25px auto;
-    padding: 30px;
+    padding: 35px;
     border-radius: 16px;
-    max-width: 480px;
     border: 1px solid rgba(124, 58, 237, 0.2);
     transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
 }
 
 .card:hover {
@@ -76,34 +151,33 @@ header p {
 
 .card h2 {
     margin-bottom: 10px;
-    font-size: 1.5em;
 }
 
 .card p {
     color: #cbd5f5;
 }
 
-/* DEVELOPMENT SECTION */
-.section h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
+/* CONTACT FORM */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.section p {
-    color: #cbd5f5;
-    max-width: 700px;
-    margin: 10px auto;
+.contact-form input,
+.contact-form textarea {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #0f172a;
+    color: white;
 }
 
-/* BRAND */
-.brand {
-    margin-top: 40px;
-    font-size: 0.95em;
-    color: #94a3b8;
-}
-
-.brand strong {
-    color: #a78bfa;
+.contact-form textarea {
+    min-height: 120px;
 }
 
 /* FOOTER */
@@ -112,45 +186,102 @@ footer {
     font-size: 0.9em;
     color: #64748b;
     border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav class="nav">
+    <div class="logo">Hobbs</div>
+    <div class="links">
+        <a href="#">Services</a>
+        <a href="#">Why Us</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
 <header>
     <h1>Hobbs Web Services</h1>
-    <p><strong>Domains. Hosting. Web Infrastructure.</strong></p>
-    <p>Built for individuals, churches, and businesses who want power, clarity, and control over their online presence.</p>
+    <p><strong>Own Your Platform. Build Without Limits.</strong></p>
+    <p>Infrastructure, hosting, and domain systems designed for individuals, churches, and businesses who want clarity, control, and long-term growth.</p>
+
+    <div class="hero-buttons">
+        <a href="#" class="btn primary">Get Started</a>
+        <a href="#" class="btn secondary">View Services</a>
+    </div>
 </header>
 
+<!-- SERVICES -->
 <section class="section">
-    <div class="card">
-        <h2>Domain Services</h2>
-        <p>Future domain registration and management designed for simplicity, ownership, and full control.</p>
-    </div>
+    <div class="cards">
+        <div class="card">
+            <h2>Domain Services</h2>
+            <p>Domain registration and management built for ownership, simplicity, and full control.</p>
+        </div>
 
-    <div class="card">
-        <h2>Hosting Solutions</h2>
-        <p>Secure, stable, and scalable hosting engineered to support growth without compromise.</p>
-    </div>
+        <div class="card">
+            <h2>Hosting Solutions</h2>
+            <p>Secure, scalable hosting engineered to support performance and long-term growth.</p>
+        </div>
 
-    <div class="card">
-        <h2>Platform Development</h2>
-        <p>A streamlined system in progress to simplify website creation, management, and long-term expansion.</p>
+        <div class="card">
+            <h2>Platform Development</h2>
+            <p>Custom systems designed to simplify website creation and expansion.</p>
+        </div>
     </div>
 </section>
 
+<!-- TRUST -->
 <section class="section">
-    <h2>Currently in Development</h2>
-    <p>Hobbs Web Services is actively being built. A stronger, more powerful platform is on the way.</p>
+    <h2>Why Choose Hobbs</h2>
 
-    <div class="brand">
-        <p>Website design and development by</p>
-        <strong>Brad Hobbs Web Design</strong>
+    <div class="cards">
+        <div class="card">
+            <h2>Secure Infrastructure</h2>
+            <p>Modern security practices protecting uptime and data integrity.</p>
+        </div>
+
+        <div class="card">
+            <h2>Built for Growth</h2>
+            <p>Scalable systems designed to evolve alongside your organization.</p>
+        </div>
+
+        <div class="card">
+            <h2>Full Ownership</h2>
+            <p>You retain control over your domains, data, and digital assets.</p>
+        </div>
     </div>
 </section>
 
+<!-- CONTACT -->
+<section class="section">
+    <h2>Get Started</h2>
+
+    <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="What do you need?"></textarea>
+        <button type="submit" class="btn primary">Submit</button>
+    </form>
+
+    <div style="margin-top:30px; color:#94a3b8;">
+        Website design and development by <strong style="color:#a78bfa;">Brad Hobbs Web Design</strong>
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
     <p>© 2026 Hobbs Web Services. All rights reserved.</p>
 </footer>
